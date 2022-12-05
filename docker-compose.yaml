@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  medusa:
+    image: pymedusa/medusa
+    container_name: medusa
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=United States/Ohio
+    volumes:
+      - <path to data>:/config
+      - <path to downloads>:/downloads
+      - <path to tv shows>:/tv
+    ports:
+      - 8081:8081
+    restart: unless-stopped
