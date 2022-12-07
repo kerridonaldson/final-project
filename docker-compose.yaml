@@ -8,9 +8,9 @@ services:
       - PGID=1001
       - TZ=United States/Ohio
     volumes:
-      - <path to data>:/config
-      - <path to downloads>:/downloads
-      - <path to tv shows>:/tv
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./tv:/tv
     ports:
-      - 8081:8081
+      - 80:8081
     restart: unless-stopped
